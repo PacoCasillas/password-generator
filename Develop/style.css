@@ -14,7 +14,10 @@ body,
 
 body {
   font-family: sans-serif;
-  background-color: #f9fbfd;
+  background-color: #127026;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .wrapper {
@@ -27,7 +30,7 @@ header {
   text-align: center;
   padding: 20px;
   padding-top: 0px;
-  color: hsl(206, 17%, 28%);
+  color: wheat;
 }
 
 .card {
@@ -55,10 +58,21 @@ header {
 }
 
 .card-footer {
-  text-align: center;
+  display: grid;
+  grid-template-columns: auto auto;
+  text-align: left;
+  row-gap: 1rem;
 }
 
 .card-footer::before {
+  content: " ";
+  display: block;
+  width: 100%;
+  background: #e7e9eb;
+  height: 2px;
+}
+
+.card-foot::before {
   content: " ";
   display: block;
   width: 100%;
@@ -97,7 +111,7 @@ button[disabled] {
   float: right;
 }
 
-#password {
+#passwordDisplay {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -125,7 +139,7 @@ button[disabled] {
     padding: 10px 15px;
   }
 
-  #password {
+  #passwordDisplay {
     font-size: 1rem;
   }
 }
@@ -134,4 +148,12 @@ button[disabled] {
   .btn {
     font-size: 0.8rem;
   }
+}
+
+#numberOfCharacters {
+  grid-column: span 2;
+}
+
+h2 {
+  text-align: center;
 }

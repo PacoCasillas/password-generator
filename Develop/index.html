@@ -4,8 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Password Generator</title>
+    <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css" />
+    <title>Password Generator</title>
   </head>
   <body>
     <div class="wrapper">
@@ -16,17 +17,44 @@
         <div class="card-header">
           <h2>Generate a Password</h2>
         </div>
-        <div class="card-body">
-          <textarea
-            readonly
-            id="password"
-            placeholder="Your Secure Password"
-            aria-label="Generated Password"
-          ></textarea>
-        </div>
-        <div class="card-footer">
+
+        <h3 class="card-body" id="passwordDisplay">Password</h3>
+
+        <form id="passwordGeneratorForm" class="card-footer">
+          <div class="card-foot"></div>
+
+          <label for="characterAmountNumber">Number of Characters</label>
+          <div id="numberOfCharacters">
+            <input
+              type="range"
+              min="8"
+              max="128"
+              value="8"
+              id="characterAmountRange"
+            />
+            <input
+              type="number-input"
+              type="number"
+              min="8"
+              max="128"
+              value="8"
+              id="characterAmountNumber"
+            />
+          </div>
+
+          <label for="includeUppercase">Include Uppercase</label>
+          <input type="checkbox" id="includeUppercase" />
+
+          <label for="includeNumbers">Include Numbers</label>
+          <input type="checkbox" id="includeNumbers" />
+
+          <label for="includeSpecialCharacters"
+            >Include Special Characters</label
+          >
+          <input type="checkbox" id="includeSpecialCharacters" />
+
           <button id="generate" class="btn">Generate Password</button>
-        </div>
+        </form>
       </div>
     </div>
     <script src="script.js"></script>
